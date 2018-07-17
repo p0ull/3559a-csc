@@ -143,7 +143,7 @@ int csc_init(int in_width,int in_height,int out_width,int out_height)
 	    output3_rgbpackge.au64PhyAddr[2]= output3_rgbpackge.au64PhyAddr[1]+output3_rgbpackge.u32Height * output3_rgbpackge.au32Stride[1];
 }
 
-int csc_deinit(){
+int convert_deinit(){
 
     HI_MPI_SYS_MmzFree(input0_nv12.au64PhyAddr[0], &input0_nv12.au64VirAddr[0]);
     HI_MPI_SYS_MmzFree(output0_rgbplanar_input1.au64PhyAddr[0], &output0_rgbplanar_input1.au64VirAddr[0]);
@@ -152,7 +152,7 @@ int csc_deinit(){
     HI_MPI_SYS_MmzFree(output2_nv12_input3.au64PhyAddr[0], &output2_nv12_input3.au64VirAddr[0]);
     HI_MPI_SYS_MmzFree(output3_rgbpackge.au64PhyAddr[0], &output3_rgbpackge.au64VirAddr[0]);
 }
-int csc_process(char *inbuffer,char *outbuffer)
+int convert_process(char *inbuffer,char *outbuffer)
 {
 
 
